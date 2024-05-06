@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Kalkulator";
+}
+
+<h2>Kalkulator</h2>
+
+<form method="post">
+    <input type="hidden" name="poprzedniWynik" value="@ViewBag.Wynik" />
+    <input type="number" name="liczba1" required />
+    <select name="operacja" required>
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="number" name="liczba2" required />
+    <button type="submit">Dodaj</button>
+</form>
+
+<div>
+    @if (ViewBag.Wynik != null)
+    {
+        <h3>Wynik: @ViewBag.Wynik</h3>
+    }
+</div>
+
+<form method="post">
+    <button type="submit" name="reset" value="true">Resetuj</button>
+</form>
+
+
